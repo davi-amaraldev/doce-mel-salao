@@ -1,40 +1,67 @@
-## Doce Mel - Sistema de Gestão de Eventos
+# Salão Doce Mel
 
-Sistema web desenvolvido para facilitar a administração do Doce Mel - Salão de Festas, centralizando o gerenciamento
-de clientes, reservas, eventos, pacotes e pagamentos.
+Website institucional desenvolvido para apresentar o Salão Doce Mel,
+seus serviços e canais de contato.
 
-### Sobre o projeto 
+## Sobre o projeto
 
-O Doce Mel tem como objetivo digitalizar e otimizar os processos administrativos do salão de festas Doce Mel,
-oferecendo uma plataforma intuitiva, organizada e eficiente.
+O projeto tem como objetivo criar uma interface responsiva e de fácil
+navegação, apresentando informações sobre o salão, seus diferenciais,
+eventos, pacotes e depoimentos.
 
-O sistema busca simplificar o controle de eventos, reduzir tarefas manuais e facilitar o acompanhamento das operações do estabelecimento.
+O desenvolvimento será realizado por uma equipe de cinco integrantes
+como projeto acadêmico do Centro Universitário de João Pessoa (UNIPÊ).
 
-## Objetivos
+## Tecnologias
 
-- Centralizar as informações do salão.
-- Simplificar o gerenciamento de reservas e eventos.
-- Organizar os dados do clientes.
-- Facilitar o controle de pacotes e pagamentos.
-- Melhorar a eficiência
+- HTML5
+- CSS3
+- JavaScript
 
-## Tecnologias 
+## Estrutura do projeto
 
-As tecnologias utilizadas serão definidas após o levantamento de requisitos e o planejamento do sistema.
+```text
+doce-mel/
+└── src/
+    ├── index.html
+    ├── style/
+    │   └── style.css
+    ├── js/
+    │   └── main.js
+    └── pages/
+        ├── about.html
+        ├── differences.html
+        ├── events.html
+        ├── packages.html
+        ├── testimonials.html
+        └── contact.html
+```
 
-## Equipe 
+## Como executar
 
-Projeto desenvolvido por:
-- Davi
-- Júlia
-- Melina
-- Vitória
-- Jayane
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/davi-amaraldev/doce-mel-salao.git
+   ```
+
+2. Acesse a pasta do projeto:
+
+   ```bash
+   cd doce-mel-salao
+   ```
+
+3. Abra o arquivo `src/index.html` no navegador.
+
+## Equipe
+
+- Davi Amaral
+- Julia Duarte
+- Jayane Carolyne
+- Ana Beatriz
+- Melina Oliveira
 
 ## Status
 
-Em planejamento: Levantamento de requisitos e definição do escopo inicial.
-
-## Licença 
-
-A licença do projeto ainda será definida.
+O projeto está em fase inicial de desenvolvimento. Este README será
+atualizado conforme novas funcionalidades forem implementadas.
