@@ -3,6 +3,11 @@
 @import "@fontsource-variable/montserrat/wght.css";
 @import "tailwindcss" source(none);
 @source "../index.html";
+@source "../quem-somos.html";
+@source "../diferenciais.html";
+@source "../eventos.html";
+@source "../pacotes.html";
+@source "../depoimentos.html";
 
 @theme {
   --font-sans: "Montserrat Variable", Arial, sans-serif;
@@ -95,7 +100,7 @@
   }
 }
 
-header nav a:focus-visible {
+:is(header nav a, [data-event-link]):focus-visible {
   color: var(--color-gold-dark);
 }
 
@@ -114,9 +119,19 @@ header nav a:focus-visible {
   opacity: 0.55;
 }
 
+[data-event-link] {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
 @media (hover: hover) {
-  :is(header nav a, #menu-mobile):hover {
+  :is(header nav a, [data-event-link], #menu-mobile):hover {
     color: var(--color-gold-dark);
+  }
+
+  [data-event-link]:hover {
+    border-color: var(--color-gold-dark);
   }
 
   [data-button]:not(:disabled):hover {
@@ -139,7 +154,7 @@ header nav a:focus-visible {
     scroll-behavior: smooth;
   }
 
-  :is(header nav a, [data-button], #menu-mobile) {
+  :is(header nav a, [data-button], [data-event-link], #menu-mobile) {
     transition: color 280ms ease, background-color 280ms ease, box-shadow 280ms ease;
   }
 
@@ -182,6 +197,13 @@ header nav a:focus-visible {
   [data-reveal].is-revealed:not([data-reveal="hero"]):has(img):has(:focus-visible),
   [data-reveal="hero"].is-revealed:has(:focus-visible) > :is(h1, p, a) {
     animation: none;
+  }
+  [data-card] { transition: transform 320ms ease; }
+  [data-photo] img { transition: transform 450ms ease; }
+  [data-card]:has(a:focus-visible) { transform: translateY(-3px); }
+  @media (hover: hover) and (pointer: fine) {
+    [data-card]:has(a:hover) { transform: translateY(-3px); }
+    [data-card]:has(a:hover) [data-photo] img { transform: scale(1.02); }
   }
 }
 
