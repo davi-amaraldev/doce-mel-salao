@@ -1,9 +1,9 @@
 const dateInput = document.querySelector('#data-evento');
 try {
   const draft = JSON.parse(sessionStorage.getItem('doce-mel-orcamento') || '{}');
-  if (typeof draft.data === 'string') dateInput.value = draft.data;
+  if (draft && typeof draft.data === 'string') dateInput.value = draft.data;
 } catch {
-  // O calendário continua funcionando se o armazenamento estiver indisponível.
+  // nao sei pq o calendario funciona se tudo ficar indisponivel, desisti de tentar entender
 }
 const calendar = document.querySelector('#calendario');
 const days = document.querySelector('#dias');
@@ -159,7 +159,7 @@ dateInput.addEventListener('input', () => {
     const draft = JSON.parse(sessionStorage.getItem('doce-mel-orcamento') || '{}');
     sessionStorage.setItem('doce-mel-orcamento', JSON.stringify({ ...draft, data: value }));
   } catch {
-    // O formulário poderá receber a data pelo campo manual.
+    // enviaremos data manualmente
   }
   const key = value.slice(0, 7);
   if (value >= today && value <= dateInput.max && key !== monthKey(visibleMonth)) {

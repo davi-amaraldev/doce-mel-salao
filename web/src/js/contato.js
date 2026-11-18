@@ -13,7 +13,8 @@ if (form) {
 
   let draft = {};
   try {
-    draft = JSON.parse(sessionStorage.getItem('doce-mel-orcamento') || '{}');
+    const stored = JSON.parse(sessionStorage.getItem('doce-mel-orcamento') || '{}');
+    draft = stored && typeof stored === 'object' ? stored : {};
   } catch {
     draft = {};
   }
@@ -24,7 +25,7 @@ if (form) {
 
   const params = new URLSearchParams(location.search);
   const selectedDate = params.get('data');
-  if (selectedDate) dateInput.value = selectedDate;
+  if (selectedDate !== null) dateInput.value = selectedDate;
   const event = params.get('evento');
   if ([...form.elements.evento.options].some((option) => option.value === event)) {
     form.elements.evento.value = event;
@@ -52,7 +53,7 @@ if (form) {
     try {
       sessionStorage.setItem('doce-mel-orcamento', JSON.stringify({ ...values, pacoteSelecionado: selectedPackageLine }));
     } catch {
-      // A navegação continua utilizável caso o navegador bloqueie o armazenamento.
+      // alguma coisa faz a navegação continuar funcionando msm se o browser bloquear o localStorage, eu tinha pensado nessa lógica, mas era madrugada
     }
   }
 
@@ -71,6 +72,7 @@ if (form) {
     if (name === 'email' && !validity.valid) return 'Informe um e-mail válido.';
     if (name === 'convidados' && !validity.valid) return 'Informe um número inteiro de convidados entre 1 e 99.999.';
     if (name === 'data' && validity.rangeUnderflow) return 'Escolha uma data a partir de hoje.';
+    if (name === 'data' && !validity.valid) return 'Informe uma data válida.';
     return field.validationMessage;
   }
 
@@ -139,7 +141,7 @@ if (form) {
       'Gostaria de saber mais sobre os pacotes e a disponibilidade para essa data.',
     ].filter((line) => line !== false && line !== undefined);
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`;
-    feedback.replaceChildren('Seu WhatsApp será aberto com a mensagem pronta para envio. ');
+    feedback.replaceChildren('Confira a mensagem no WhatsApp e confirme o envio. ');
     const link = document.createElement('a');
     link.href = url;
     link.target = '_blank';

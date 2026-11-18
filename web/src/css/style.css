@@ -8,6 +8,9 @@
 @source "../eventos.html";
 @source "../pacotes.html";
 @source "../depoimentos.html";
+@source "../contato.html";
+@source "../disponibilidade.html";
+@source "../js/calendar.js";
 
 @theme {
   --font-sans: "Montserrat Variable", Arial, sans-serif;
@@ -221,3 +224,10 @@
   from { opacity: 0.65; transform: translateY(-4px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+#orcamento { scroll-margin-top: 100px; }
+#orcamento :is(input, select, textarea) { border-color: var(--color-gold-secondary); }
+#orcamento :is(input, select, textarea):focus-visible { border-color: var(--color-gold-dark); outline-offset: 2px; }
+#orcamento :is(input, select, textarea)[aria-invalid="true"] { border-color: var(--color-gold-dark); box-shadow: inset 0 0 0 1px var(--color-gold-dark); }
+.field-error { @apply mt-2 text-[13px] font-medium leading-snug text-gold-dark; }
+@media (max-width: 767px) { #orcamento :is(input, select, textarea) { font-size: 16px; } }

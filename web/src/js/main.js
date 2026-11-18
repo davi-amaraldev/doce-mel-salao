@@ -51,3 +51,4 @@ if (mobileMenu && mainNavigation) {
   mobileLayout.addEventListener('change', closeMenu);
 }
 
+// NAO MEXER NAS FUNCOES DE LAYOUT MOBILE E MENU (VAI QUEBRAR!!!!!!!)
