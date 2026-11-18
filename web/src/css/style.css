@@ -1,0 +1,201 @@
+@import "@fontsource-variable/cormorant-garamond/wght.css";
+@import "@fontsource-variable/cormorant-garamond/wght-italic.css";
+@import "@fontsource-variable/montserrat/wght.css";
+@import "tailwindcss" source(none);
+@source "../index.html";
+
+@theme {
+  --font-sans: "Montserrat Variable", Arial, sans-serif;
+  --font-display: "Cormorant Garamond Variable", serif;
+  --color-cream: #fbf7f0;
+  --color-parchment: #f4ecde;
+  --color-gold: #c4a165;
+  --color-gold-secondary: #8c692f;
+  --color-gold-dark: #674d23;
+  --color-line: #d7c7aa;
+  --color-ink: #2b2118;
+}
+
+@layer base {
+  :focus-visible {
+    @apply outline-2 outline-offset-4 outline-gold-dark;
+  }
+}
+
+.site-header {
+  background-color: var(--color-cream);
+}
+
+.site-header nav a:not(.nav-mobile-cta) {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.site-header nav a:not(.nav-mobile-cta)::after {
+  position: absolute;
+  right: 0;
+  bottom: 5px;
+  left: 0;
+  height: 1px;
+  background: var(--color-gold-secondary);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.site-header nav a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+.site-header nav a[aria-current="page"] {
+  color: var(--color-gold-dark);
+  font-weight: 600;
+}
+
+.menu-toggle {
+  cursor: pointer;
+}
+
+.menu-toggle-mark {
+  display: inline-block;
+  margin-left: 4px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle-mark {
+  transform: rotate(45deg);
+}
+
+@media (max-width: 1279px) {
+  #menu-principal:not([hidden]) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 1.5rem;
+    max-height: calc(100dvh - 90px);
+    overflow-y: auto;
+    padding: 0 0 8px;
+  }
+
+  #menu-principal a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  #menu-principal .nav-mobile-cta {
+    grid-column: 1 / -1;
+    width: fit-content;
+    margin-top: 8px;
+    padding: 0 16px;
+    border: 1px solid var(--color-gold-secondary);
+  }
+}
+
+header nav a:focus-visible {
+  color: var(--color-gold-dark);
+}
+
+[data-button]:active:not(:disabled) {
+  box-shadow: inset 0 0 0 2px var(--color-gold-dark);
+}
+
+[data-button] {
+  cursor: pointer;
+  text-align: center;
+  justify-content: center;
+}
+
+[data-button]:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+@media (hover: hover) {
+  :is(header nav a, #menu-mobile):hover {
+    color: var(--color-gold-dark);
+  }
+
+  [data-button]:not(:disabled):hover {
+    box-shadow: inset 0 0 0 1px var(--color-gold-secondary);
+  }
+
+  [data-button].bg-gold:not(:disabled):hover {
+    background-color: var(--color-gold-secondary);
+    color: var(--color-cream);
+  }
+
+  [data-button].bg-ink:hover {
+    background-color: var(--color-gold-dark);
+    border-color: var(--color-gold-dark);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  :is(header nav a, [data-button], #menu-mobile) {
+    transition: color 280ms ease, background-color 280ms ease, box-shadow 280ms ease;
+  }
+
+  .site-header nav a::after,
+  .menu-toggle-mark {
+    transition: transform 220ms ease;
+  }
+
+  @media (max-width: 1279px) {
+    #menu-principal:not([hidden]) {
+      animation: menu-enter 220ms ease-out both;
+    }
+  }
+
+  @media (hover: hover) {
+    .site-header nav a:not(.nav-mobile-cta):hover::after {
+      transform: scaleX(1);
+    }
+  }
+
+  [data-reveal].is-revealed:not([data-reveal="hero"]),
+  [data-reveal="hero"].is-revealed > :is(h1, p, a) {
+    animation: reveal 560ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
+
+  [data-reveal="photo"].is-revealed,
+  [data-reveal].is-revealed:not([data-reveal="hero"]):has(img) {
+    animation: photo-in 620ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
+
+  [data-reveal="hero"].is-revealed > p {
+    animation-delay: 70ms;
+  }
+
+  [data-reveal="hero"].is-revealed > a {
+    animation-delay: 130ms;
+  }
+
+  [data-reveal].is-revealed:has(:focus-visible),
+  [data-reveal].is-revealed:not([data-reveal="hero"]):has(img):has(:focus-visible),
+  [data-reveal="hero"].is-revealed:has(:focus-visible) > :is(h1, p, a) {
+    animation: none;
+  }
+}
+
+@keyframes reveal {
+  from { opacity: 0.65; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes photo-in {
+  from { opacity: 0.8; }
+  to { opacity: 1; }
+}
+
+@keyframes menu-enter {
+  from { opacity: 0.65; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
