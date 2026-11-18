@@ -179,7 +179,7 @@
   }
 
   [data-reveal].is-revealed:not([data-reveal="hero"]),
-  [data-reveal="hero"].is-revealed > :is(h1, p, a) {
+  [data-reveal="hero"].is-revealed> :is(h1, p, a) {
     animation: reveal 560ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
   }
 
@@ -188,46 +188,101 @@
     animation: photo-in 620ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
   }
 
-  [data-reveal="hero"].is-revealed > p {
+  [data-reveal="hero"].is-revealed>p {
     animation-delay: 70ms;
   }
 
-  [data-reveal="hero"].is-revealed > a {
+  [data-reveal="hero"].is-revealed>a {
     animation-delay: 130ms;
   }
 
   [data-reveal].is-revealed:has(:focus-visible),
   [data-reveal].is-revealed:not([data-reveal="hero"]):has(img):has(:focus-visible),
-  [data-reveal="hero"].is-revealed:has(:focus-visible) > :is(h1, p, a) {
+  [data-reveal="hero"].is-revealed:has(:focus-visible)> :is(h1, p, a) {
     animation: none;
   }
-  [data-card] { transition: transform 320ms ease; }
-  [data-photo] img { transition: transform 450ms ease; }
-  [data-card]:has(a:focus-visible) { transform: translateY(-3px); }
+
+  [data-card] {
+    transition: transform 320ms ease;
+  }
+
+  [data-photo] img {
+    transition: transform 450ms ease;
+  }
+
+  [data-card]:has(a:focus-visible) {
+    transform: translateY(-3px);
+  }
+
   @media (hover: hover) and (pointer: fine) {
-    [data-card]:has(a:hover) { transform: translateY(-3px); }
-    [data-card]:has(a:hover) [data-photo] img { transform: scale(1.02); }
+    [data-card]:has(a:hover) {
+      transform: translateY(-3px);
+    }
+
+    [data-card]:has(a:hover) [data-photo] img {
+      transform: scale(1.02);
+    }
   }
 }
 
 @keyframes reveal {
-  from { opacity: 0.65; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0.65;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes photo-in {
-  from { opacity: 0.8; }
-  to { opacity: 1; }
+  from {
+    opacity: 0.8;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes menu-enter {
-  from { opacity: 0.65; transform: translateY(-4px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0.65;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-#orcamento { scroll-margin-top: 100px; }
-#orcamento :is(input, select, textarea) { border-color: var(--color-gold-secondary); }
-#orcamento :is(input, select, textarea):focus-visible { border-color: var(--color-gold-dark); outline-offset: 2px; }
-#orcamento :is(input, select, textarea)[aria-invalid="true"] { border-color: var(--color-gold-dark); box-shadow: inset 0 0 0 1px var(--color-gold-dark); }
-.field-error { @apply mt-2 text-[13px] font-medium leading-snug text-gold-dark; }
-@media (max-width: 767px) { #orcamento :is(input, select, textarea) { font-size: 16px; } }
+#orcamento {
+  scroll-margin-top: 100px;
+}
+
+#orcamento :is(input, select, textarea) {
+  border-color: var(--color-gold-secondary);
+}
+
+#orcamento :is(input, select, textarea):focus-visible {
+  border-color: var(--color-gold-dark);
+  outline-offset: 2px;
+}
+
+#orcamento :is(input, select, textarea)[aria-invalid="true"] {
+  border-color: var(--color-gold-dark);
+  box-shadow: inset 0 0 0 1px var(--color-gold-dark);
+}
+
+.field-error {
+  @apply mt-2 text-[13px] font-medium leading-snug text-gold-dark;
+}
+
+@media (max-width: 767px) {
+  #orcamento :is(input, select, textarea) {
+    font-size: 16px;
+  }
+}
