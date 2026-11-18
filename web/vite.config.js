@@ -9,6 +9,8 @@ const pages = [
   'eventos.html',
   'pacotes.html',
   'depoimentos.html',
+  'disponibilidade.html',
+  'contato.html',
 ];
 
 export default defineConfig({
@@ -19,7 +21,9 @@ export default defineConfig({
     outDir: '../dist',
     emptyOutDir: true,
     rolldownOptions: {
-      input: pages.map((page) => fileURLToPath(new URL(`./src/${page}`, import.meta.url))),
+      input: pages.map((page) =>
+        fileURLToPath(new URL(`./src/${page}`, import.meta.url))
+      ),
       output: {
         assetFileNames: ({ names }) => (
           names.some((name) => name.endsWith('.jpeg'))
