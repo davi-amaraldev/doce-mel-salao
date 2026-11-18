@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Conheça o Doce Mel Recepções, salão de festas em João Pessoa.">
+  <meta name="theme-color" content="#FBF7F0">
+  <title>Doce Mel · Eventos</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script type="module" src="./js/main.js"></script>
+</head>
+<body class="bg-cream font-sans leading-[normal] text-ink">
+  <a href="#conteudo" class="sr-only focus:not-sr-only focus:absolute focus:bg-cream focus:p-3">Ir para o conteúdo</a>
+  <header class="site-header sticky top-0 z-20 border-b border-line bg-cream">
+    <div class="max-w-[1380px] mx-auto px-5 sm:px-8 lg:px-12 py-3 flex flex-wrap items-center justify-between gap-x-6 gap-y-3">
+      <a href="index.html" aria-label="Doce Mel, página inicial" class="flex items-center gap-3">
+        <svg width="44" height="48" viewBox="0 0 64 70" fill="none" aria-hidden="true">
+          <polygon points="32,3 59,18.5 59,51.5 32,67 5,51.5 5,18.5" stroke="#A67C1A" stroke-width="3"></polygon>
+          <polygon points="32,9 54,21.8 54,48.2 32,61 10,48.2 10,21.8" stroke="#C8962E" stroke-width="1"></polygon>
+          <text x="32" y="43" text-anchor="middle" class="font-display" font-size="22" font-weight="600" fill="#A67C1A">DM</text>
+        </svg>
+        <span class="font-display text-[22px] font-semibold tracking-[0.3em]">DOCE MEL</span>
+      </a>
+      <button id="menu-mobile" type="button" aria-controls="menu-principal" aria-expanded="false" hidden class="menu-toggle min-h-11 min-w-11 border border-gold-secondary px-3 text-[12px] font-semibold tracking-[0.16em] text-ink xl:hidden">MENU <span aria-hidden="true" class="menu-toggle-mark">+</span></button>
+      <nav id="menu-principal" aria-label="Menu principal" class="flex flex-wrap gap-7 text-[12px] font-medium tracking-[0.16em] max-xl:order-last max-xl:w-full">
+        <a href="quem-somos.html">QUEM SOMOS</a>
+        <a href="diferenciais.html">DIFERENCIAIS</a>
+        <a href="eventos.html" aria-current="page">EVENTOS</a>
+        <a href="pacotes.html">PACOTES</a>
+        <a href="depoimentos.html">DEPOIMENTOS</a>
+        <a href="contato.html">CONTATO</a>
+        <a href="contato.html#orcamento" class="nav-mobile-cta xl:hidden">ORÇAMENTO</a>
+      </nav>
+      <a href="contato.html#orcamento" data-button class="hidden xl:inline-flex border border-ink bg-ink text-cream px-6 py-3 text-[11px] font-semibold tracking-[0.16em] min-h-11 items-center">ORÇAMENTO</a>
+    </div>
+  </header>
+  <main id="conteudo" tabindex="-1">
+    <section id="eventos" aria-labelledby="titulo-eventos">
+
+      <div data-reveal class="max-w-[1304px] mx-auto pt-16 sm:pt-20 px-5 sm:px-8 pb-12 sm:pb-16 flex flex-col items-start gap-5 text-left">
+        <span class="text-[11px] font-semibold tracking-[0.32em] text-gold-dark">EVENTOS</span>
+        <h1 id="titulo-eventos" class="max-w-[750px] font-display text-[44px] sm:text-[64px] lg:text-[72px] font-normal leading-[1.02]">Qual momento você quer <span class="italic text-gold-secondary">celebrar</span>?</h1>
+        <p class="max-w-[560px] text-[16px] font-light leading-[1.8]">Casamentos, festas de 15 anos e aniversários encontram espaço no Doce Mel.</p>
+      </div>
+
+      <div data-reveal class="max-w-[1304px] mx-auto px-5 sm:px-8 py-0 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12 lg:gap-x-8">
+
+        <div data-card class="flex flex-col items-start gap-3">
+          <div data-photo class="w-full overflow-hidden mb-2">
+            <img src="./assets/casal.jpeg" width="1064" height="1600" loading="lazy" alt="Noivos abraçados sob o véu entre arranjos de flores brancas" class="block w-full h-[390px] sm:h-[420px] lg:h-[470px] object-cover object-[center_40%]">
+          </div>
+          <span class="font-display text-[16px] text-gold-dark">01</span>
+          <h2 class="font-display text-[34px] font-semibold leading-none">Casamentos</h2>
+          <p class="max-w-[380px] text-[14px] font-light leading-[1.75]">Flores e decoração para acompanhar a cerimônia e a festa de casamento.</p>
+          <a href="contato.html?evento=Casamento#orcamento" data-event-link data-event="Casamento" class="mt-2 pt-3 px-0 pb-[6px] border-b border-gold text-[11px] font-semibold tracking-[0.2em]">PEDIR ORÇAMENTO DESTE EVENTO</a>
+        </div>
+
+        <div data-card class="flex flex-col items-start gap-3">
+          <div data-photo class="w-full overflow-hidden mb-2">
+            <img src="./assets/aniversario.jpeg" width="1066" height="1600" loading="lazy" alt="Debutante de coroa e vestido vermelho bordado erguendo uma taça ao lado do bolo" class="block w-full h-[390px] sm:h-[420px] lg:h-[470px] object-cover object-[center_30%]">
+          </div>
+          <span class="font-display text-[16px] text-gold-dark">02</span>
+          <h2 class="font-display text-[34px] font-semibold leading-none">15 anos</h2>
+          <p class="max-w-[380px] text-[14px] font-light leading-[1.75]">Uma festa para celebrar os 15 anos com a personalidade da debutante.</p>
+          <a href="contato.html?evento=15%20anos#orcamento" data-event-link data-event="15 anos" class="mt-2 pt-3 px-0 pb-[6px] border-b border-gold text-[11px] font-semibold tracking-[0.2em]">PEDIR ORÇAMENTO DESTE EVENTO</a>
+        </div>
+
+        <div data-card class="flex flex-col items-start gap-3">
+          <div data-photo class="w-full overflow-hidden mb-2">
+            <img src="./assets/formatura.jpeg" width="1024" height="1280" loading="lazy" alt="Aniversariante de vestido vermelho em frente à decoração com rosas vermelhas e vasos iluminados" class="block w-full h-[390px] sm:h-[420px] lg:h-[470px] object-cover object-[center_40%]">
+          </div>
+          <span class="font-display text-[16px] text-gold-dark">03</span>
+          <h2 class="font-display text-[34px] font-semibold leading-none">Aniversários</h2>
+          <p class="max-w-[380px] text-[14px] font-light leading-[1.75]">Comemorações de todas as idades, com decoração, buffet e docinhos para reunir quem você ama.</p>
+          <a href="contato.html?evento=Anivers%C3%A1rio#orcamento" data-event-link data-event="Aniversário" class="mt-2 pt-3 px-0 pb-[6px] border-b border-gold text-[11px] font-semibold tracking-[0.2em]">PEDIR ORÇAMENTO DESTE EVENTO</a>
+        </div>
+      </div>
+
+      <div data-reveal class="max-w-[1304px] mx-auto mt-18 px-5 sm:px-8 pb-24">
+        <div class="bg-parchment border-t-2 border-gold px-5 sm:px-8 py-12 flex flex-col items-center gap-5 text-center">
+          <p class="font-display text-[32px] leading-[1.2]">Tem outra comemoração em mente? <span class="italic text-gold-secondary">Fale com a gente.</span></p>
+          <a href="contato.html" data-button class="bg-gold border border-gold-secondary px-5 sm:px-8 py-[18px] text-[12px] font-semibold tracking-[0.2em] min-h-12 inline-flex items-center">SOLICITE SEU ORÇAMENTO</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="border-t border-line bg-parchment">
+    <div class="mx-auto flex max-w-[1380px] flex-col gap-8 px-5 py-10 sm:px-8 md:flex-row md:items-end md:justify-between lg:px-12 lg:py-12">
+      <div>
+        <a href="index.html" class="font-display text-[26px] font-semibold tracking-[0.16em] text-ink">DOCE MEL</a>
+        <p class="mt-2 text-[12px] leading-[1.7] text-gold-dark">Rua Manuel Miguel de Morais, 54 · Bancários<br>João Pessoa - PB</p>
+      </div>
+      <a href="contato.html#orcamento" class="inline-flex min-h-11 items-center self-start border-b border-gold-secondary text-[11px] font-semibold tracking-[0.16em] text-ink">SOLICITAR ORÇAMENTO <span aria-hidden="true" class="ml-3 text-base">↗</span></a>
+    </div>
+  </footer>
+</body>
+</html>
