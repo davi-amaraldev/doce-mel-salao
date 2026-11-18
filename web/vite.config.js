@@ -2,6 +2,15 @@ import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vite';
 import { fileURLToPath } from 'node:url';
 
+const pages = [
+  'index.html',
+  'quem-somos.html',
+  'diferenciais.html',
+  'eventos.html',
+  'pacotes.html',
+  'depoimentos.html',
+];
+
 export default defineConfig({
   root: 'src',
   base: './',
@@ -10,7 +19,7 @@ export default defineConfig({
     outDir: '../dist',
     emptyOutDir: true,
     rolldownOptions: {
-      input: fileURLToPath(new URL('./src/index.html', import.meta.url)),
+      input: pages.map((page) => fileURLToPath(new URL(`./src/${page}`, import.meta.url))),
       output: {
         assetFileNames: ({ names }) => (
           names.some((name) => name.endsWith('.jpeg'))
