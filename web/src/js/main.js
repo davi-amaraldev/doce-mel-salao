@@ -1,5 +1,3 @@
-const WHATSAPP_NUMBER = "5583988695122";
-
 const mobileMenu = document.querySelector('#menu-mobile');
 const mainNavigation = document.querySelector('#menu-principal');
 const mobileLayout = window.matchMedia('(max-width: 1279px)');
